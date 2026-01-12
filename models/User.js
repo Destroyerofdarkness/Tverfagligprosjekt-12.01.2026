@@ -4,7 +4,7 @@ const userSchema = new Schema({
     username:{
         type:String,
         required:true,
-        unique: true
+        unique: true,
     },
     passwd: {
         type:String,
@@ -21,5 +21,14 @@ userSchema.pre("save",async function () {
     }
 })
 
-module.exports = model("Users", userSchema)
+userSchema.statics.register = async(info) =>{
+const newUser = new User({username:info.username,passwd:info.passwd})
+await newUser.save();
+return newUser._id
+}
+
+
+
+const User = model("Users", userSchema)
+module.exports = User
 

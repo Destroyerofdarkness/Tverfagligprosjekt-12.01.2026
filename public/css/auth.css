@@ -55,6 +55,9 @@ nav a{
     color: var(--primary);
     font-family: var(--primaryfont);
 }
+button:hover{
+    cursor: pointer;
+}
 :root{
     --secondary: #906570;
     --primary: #4F1B2F;
