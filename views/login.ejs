@@ -1,11 +1,13 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/auth.css">
+<script src="/script/fetch_login.js"></script>
 <%- include("./partials/header.ejs") %>
 <form action="/sign-in" method="post">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" placeholder="Enter your username..">
     <label for="passwd">Username:</label>
     <input type="password" name="passwd" id="passwd" placeholder="Enter your password..">
+    <div class="error"></div>
     <button type="submit">Sign In</button>
     <nav><a href="/sign-up">Don't have an account?</a></nav>
 </form>

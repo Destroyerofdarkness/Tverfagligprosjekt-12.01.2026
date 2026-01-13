@@ -1,13 +1,15 @@
 <%- include("./partials/head.ejs") %>
 <link rel="stylesheet" href="/css/auth.css">
+<script src="/script/fetch_register.js"></script>
 <%- include("./partials/header.ejs") %>
 <form action="/sign-up" method="post">
        <label for="username">Username:</label>
     <input type="text" name="username" id="username" placeholder="Enter the username..">
-    <label for="passwd">Username:</label>
+    <label for="passwd">Password:</label>
     <input type="password" name="passwd" id="passwd" placeholder="Enter the password..">
     <label for="conPass">Repeat password:</label>
     <input type="password" name="conPass" id="conPass" placeholder="Repeat your password..">
+    <div class="error"></div>
     <button type="submit">Sign Up</button>
     <nav><a href="/sign-in">Already an Account?</a></nav>
 </form>

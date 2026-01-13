@@ -3,13 +3,13 @@ const argon2 = require("argon2")
 const userSchema = new Schema({
     username:{
         type:String,
-        required:true,
+        required:[true, "Enter the username in the input"],
         unique: true,
     },
     passwd: {
         type:String,
-        minLength: 6,
-        required:true
+        minLength: [6, "The password must be a minimum of 6 letters"],
+        required:[true, "Enter the password in the input"]
     }
 })
 

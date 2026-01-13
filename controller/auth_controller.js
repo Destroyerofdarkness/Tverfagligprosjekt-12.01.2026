@@ -1,6 +1,6 @@
 const User = require("../models/User.js");
 const jwt = require("jsonwebtoken");
-
+const { handleUserError } = require("../handlers/errorHandlers.js");
 const maxValidDate = 24 * 60 * 60;
 const signJwt = (id) => {
   return jwt.sign({ id }, process.env.secret, {
@@ -31,10 +31,11 @@ const sign_in_user = async (req, res) => {
     const userId = await User.login(req.body);
     const token = signJwt(userId);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxValidDate * 1000 });
-    res.status(200).redirect("/");
+    res.status(200).json({success:true})
   } catch (err) {
     console.log(err);
-    res.status(300).send({ err });
+     const errors = handleUserError(err);
+    res.status(300).json({ errors });
   }
 };
 
@@ -43,10 +44,10 @@ const sign_up_user = async (req, res) => {
     const userId = await User.register(req.body);
     const token = signJwt(userId);
     res.cookie("jwt", token, { httpOnly: true, maxAge: maxValidDate * 1000 });
-    res.status(200).redirect("/");
+    res.status(200).json({ success: true });
   } catch (err) {
-    console.log(err);
-    res.status(300).send({ err });
+    const errors = handleUserError(err);
+    res.status(300).json({ errors });
   }
 };
 
