@@ -6,7 +6,6 @@ const randomQoute = (list)=>{
     return list[random]
 }
 
-
 const render_home = async(req,res)=>{
     try{
         const quoteList = await Quote.find()

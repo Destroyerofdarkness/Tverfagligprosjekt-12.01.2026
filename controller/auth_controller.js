@@ -51,4 +51,14 @@ const sign_up_user = async (req, res) => {
   }
 };
 
-module.exports = { render_login, render_register, sign_up_user, sign_in_user };
+const sign_out_user =(req,res)=>{
+  try{
+    res.cookie("jwt","",{httpOnly: true, maxAge: 10 })
+    res.status(200).redirect("/sign-in")
+  }catch(err){
+    console.log(err)
+    res.status(300).send(err)
+  }
+}
+
+module.exports = { render_login, render_register, sign_up_user, sign_in_user,sign_out_user };
