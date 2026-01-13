@@ -1,0 +1,33 @@
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 4vw;
+}
+main section{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+main section h1{
+    font-size: 2vw;
+    color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    font-family: var(--secondaryfont);
+}
+main section h2{
+    font-size: 1.5vw;
+    color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    font-family: var(--primaryfont);
+    align-self: flex-end;
+}
+:root{
+    --secondary: #906570;
+    --primary: #4F1B2F;
+    --primaryfont: "Joan", serif; 
+    --secondaryfont: "Marcellus SC", serif;
+}

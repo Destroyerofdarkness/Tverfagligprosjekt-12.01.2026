@@ -1,12 +1,14 @@
 <%- include("./partials/head.ejs") %>
-
+<link rel="stylesheet" href="/css/userPub.css">
 <%- include("./partials/header.ejs") %>
 
-<div>
+<main>
     <% quotes.forEach(quote => {%>
+        <section>
         <h1><%= quote.quote %></h1>
         <h2><%= quote.origin %></h2>
+        </section>
     <% }); %>
-</div>
+    </main>
 
 <%- include("./partials/footer.ejs") %>
