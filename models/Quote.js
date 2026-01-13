@@ -4,9 +4,9 @@ const {Schema, model} = require("mongoose");
 const quoteSchema = new Schema({
     quote:{
         type: String,
-        required: true,
+        required: [true, "Enter the content of the Quote"],
         maxLength: [100, "The max length of the quote is 100 characters"],
-        unique: [true, "Enter the content of the Quote"]
+        unique: true, 
     },
     origin:{
         type:String,

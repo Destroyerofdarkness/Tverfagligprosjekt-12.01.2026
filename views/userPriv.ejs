@@ -5,11 +5,13 @@
 <form id="publish">
     <label for="quote">Quote:</label>
     <textarea name="quote" id="quote" placeholder="Enter the content of the quote.."></textarea>
+    <div class="quote error"></div>
     <div id="originDiv">
         <label for="origin">Origin:</label>
         <input type="text" name="origin" id="origin" placeholder="Enter the author of the quote..">
-    <input type="hidden" name="createdBy" id="createdBy" value="<%= user.username %>">
     </div>
+    <div class="origin error"></div>
+    <input type="hidden" name="createdBy" id="createdBy" value="<%= user.username %>">
     <button type="submit">Publish</button>
 </form>
 <main>

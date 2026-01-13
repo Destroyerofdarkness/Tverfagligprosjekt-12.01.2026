@@ -64,6 +64,18 @@ label{
     color: var(--primary);
     font-size: 1.3vw;
 }
+.quote{
+    align-self: flex-start;
+}
+.origin{
+    align-self: flex-end;
+}
+.error{
+    font-size: 1.3vw;
+    font-family: var(--primaryfont);
+    color: red;
+    text-decoration:dashed;
+}
 main{
     display: flex;
     justify-content: center;

@@ -28,4 +28,20 @@ if(error.message.includes("Users validation failed")){
 return errors
 }
 
-module.exports = {handleUserError}
+const handleQuoteError = (error)=>{
+
+    const errors = {quote:"",origin:""}
+    if(error.code === 11000){
+    errors.quote = "The Quote is already published"
+    return errors
+    }
+    if(error.message.includes("Quotes validation failed")){
+     Object.values(error.errors).forEach(({ properties }) => {
+    console.log(properties.message)
+    errors[properties.path] = properties.message   
+  });
+  return errors
+}
+}
+
+module.exports = {handleUserError, handleQuoteError}

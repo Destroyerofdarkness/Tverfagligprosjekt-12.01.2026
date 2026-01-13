@@ -2,10 +2,18 @@ document.addEventListener("DOMContentLoaded", (e) => {
   e.preventDefault();
 
   const form = document.querySelector("#publish");
+
+  const quoteError = document.querySelector(".quote.error")
+  const originError = document.querySelector(".origin.error")
+
   form.addEventListener("submit", async (e) => {
+    e.preventDefault()
     const quote = form.quote.value;
     const origin = form.origin.value;
     const user = form.createdBy.value;
+
+    quoteError.textContent = ""
+    originError.textContent = ""
     try {
       const res = await fetch(`/home/${user}`, {
         method: "POST",
@@ -18,8 +26,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
       if (data.success) {
         window.location.reload();
       }
-      if (data.error) {
-        console.log(data.error);
+      if (data.errors) {
+        quoteError.textContent = data.errors.quote
+        originError.textContent = data.errors.origin
       }
     } catch (err) {
       console.log(err);
