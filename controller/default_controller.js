@@ -16,7 +16,7 @@ const user_page_public_render =async(req,res, next)=>{
         res.render("userPub",{quotes, title: `Quotes - ${user.username}`})
     }catch(err){
         console.log(err)
-        res.status(404)
+        res.status(500)
         next()
     }
 }

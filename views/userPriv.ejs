@@ -1,0 +1,21 @@
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="/css/userPriv.css">
+<script src="/script/fetch_quote.js"></script>
+<%- include("./partials/header.ejs") %>
+<form id="publish">
+    <label for="quote">Quote:</label>
+    <input type="text" name="quote" id="quote" placeholder="Enter the content of the quote..">
+    <label for="origin">Origin</label>
+    <input type="text" name="origin" id="origin" placeholder="Enter the origin of the quote..">
+    <input type="hidden" name="createdBy" id="createdBy" value="<%= user.username %>">
+    <button type="submit">Publish</button>
+</form>
+<main>
+    <% quotes.forEach(quote => {%>
+        <section>
+        <h1><%= quote.quote %></h1>
+        <h2><%= quote.origin %></h2>
+        </section>
+    <% }); %>
+    </main>
+<%- include("./partials/footer.ejs") %>

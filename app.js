@@ -30,10 +30,13 @@ const main_router = require("./routes/default_router.js");
 
 const auth_router = require("./routes/auth_routes.js");
 
+const authorized_router = require("./routes/authorized_routes.js")
 
 app.use(auth_router);
 
 app.use(main_router);
+
+app.use("/home", authorized_router)
 
 app.use((req,res)=>{
   try{

@@ -39,4 +39,13 @@ const checkUser = (req, res, next) => {
   }
 };
 
-module.exports = { authenticate, checkUser };
+const authorize = (req,res,next)=>{
+  const user = req.params.user
+  const loggedIn = res.locals.user.username
+  if(user === loggedIn){
+    next()
+  }else{
+    res.redirect(`/${user}`)
+  }
+}
+module.exports = { authenticate, checkUser, authorize };

@@ -59,6 +59,6 @@ const sign_out_user =(req,res)=>{
     console.log(err)
     res.status(300).send(err)
   }
-}
+};
 
 module.exports = { render_login, render_register, sign_up_user, sign_in_user,sign_out_user };
