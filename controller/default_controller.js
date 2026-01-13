@@ -13,7 +13,7 @@ const user_page_public_render =async(req,res, next)=>{
         const quotes = await User.findQuotes(username)
         const user = await User.findOne({username:username })
         console.log(quotes)
-        res.render("userPub",{quotes, title: `Quotes - ${user.username}`})
+        res.render("userPub",{quotes, title: `${user.username}'s quotes`})
     }catch(err){
         console.log(err)
         res.status(500)

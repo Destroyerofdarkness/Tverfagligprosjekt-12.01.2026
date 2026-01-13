@@ -4,10 +4,12 @@
 <%- include("./partials/header.ejs") %>
 <form id="publish">
     <label for="quote">Quote:</label>
-    <input type="text" name="quote" id="quote" placeholder="Enter the content of the quote..">
-    <label for="origin">Origin</label>
-    <input type="text" name="origin" id="origin" placeholder="Enter the origin of the quote..">
+    <textarea name="quote" id="quote" placeholder="Enter the content of the quote.."></textarea>
+    <div id="originDiv">
+        <label for="origin">Origin:</label>
+        <input type="text" name="origin" id="origin" placeholder="Enter the author of the quote..">
     <input type="hidden" name="createdBy" id="createdBy" value="<%= user.username %>">
+    </div>
     <button type="submit">Publish</button>
 </form>
 <main>

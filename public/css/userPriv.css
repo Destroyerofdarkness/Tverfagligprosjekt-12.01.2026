@@ -1,0 +1,101 @@
+#publish{
+    display: flex;
+    width: 50vw;
+    gap: 1vw;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--secondary);
+    padding: 1vw;
+    margin-top: 2vw;
+    border-radius: 0.7vw;
+}
+#publish textarea{
+    resize: none;
+    width: 48vw;
+    font-size: 1.5vw;
+    font-family: var(--secondaryfont);
+    color: var(--secondary);
+    background: var(--primary);
+    border: 0;
+    height: 10vw;
+    padding: 0.6vw;
+    border-radius: 0.7vw;
+    align-self: center;
+}
+textarea::placeholder, input::placeholder{
+    color: var(--secondary);
+}
+textarea, input{
+    outline: none;
+}
+#publish button{
+    width: 8vw;
+    padding: 0.7vw;
+    align-self: center;
+    font-family: var(--primaryfont);
+    color: var(--secondary);
+    background: var(--primary);
+    border-radius: 0.5vw;
+    border: 0;
+    font-size: 1.2vw;
+}
+#originDiv{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.3vw;
+}
+#originDiv input{
+    font-family: var(--primaryfont);
+    width: 20vw;
+    height: 2vw;
+    font-size: 1vw;
+    border: 0;
+    border-radius: 0.6vw;
+    background: var(--primary);
+    padding: 0.3vw;
+    color: var(--secondary);
+}
+#originDiv label{
+    align-self: center;
+}
+label{
+    font-family: var(--primaryfont);
+    color: var(--primary);
+    font-size: 1.3vw;
+}
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    margin-top: 4vw;
+    gap: 2vw;
+    margin-bottom: 4vw;
+}
+main section{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+}
+main section h1{
+    font-size: 2vw;
+    color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    font-family: var(--secondaryfont);
+}
+main section h2{
+    font-size: 1.5vw;
+    color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    font-family: var(--primaryfont);
+    align-self: flex-end;
+}
+:root{
+    --secondary: #906570;
+    --primary: #4F1B2F;
+    --primaryfont: "Joan", serif; 
+    --secondaryfont: "Marcellus SC", serif;
+}

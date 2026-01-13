@@ -19,7 +19,7 @@ header{
      flex: 1;
 }
 header #logo img{
-   
+    margin-left:0.3vw ;
     display: flex;
     align-self: baseline;
     width: auto;
@@ -48,6 +48,9 @@ header nav a{
     font-size: 2vw;
     background-color: var(--primary);
     color: var(--secondary);
+}
+button:hover{
+    cursor: pointer;
 }
 :root{
     --secondary: #906570;
